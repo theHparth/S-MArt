@@ -1,0 +1,30 @@
+{
+  "name": "cs-546-final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Group 15",
+  "license": "ISC",
+  "engines": {
+    "node": "15.14.0"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "bson-objectid": "^2.0.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.7.3",
+    "mongoose": "^6.0.11",
+    "node-simple-validator": "^2.0.0",
+    "nodemon": "^2.0.15",
+    "xss": "^1.0.10"
+  }
+}

@@ -1,0 +1,69 @@
+  <div id="new-content">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box" ALIGN=CENTER ></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">      
+                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>        
+                        <li class="nav-item"><a class="nav-link" href="/shop/login">Shopkeeper</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/users/login">Customer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop/allProduct">Product List</a></li>
+                    </ul>
+         
+            </div>
+        </nav>
+
+   <section class="u-clearfix u-grey-10 u-section-1" id="sec-42f4">
+
+    <div class="search-card-center">
+        {{!-- <h1>Welcome!</h1>
+        <p>Discover the best product.</p> --}}
+        <label for="search-bar">
+            <form id="search-form">
+                <input id="search-bar" type="text" name="search" class = "searchFields" placeholder="Search for a product">
+                <input type="submit" class = "btn" id = "submitbutton" value="Search">
+            </form>
+        </label>
+    </div>
+{{#if allProducts}}
+
+      <div class="u-clearfix u-sheet u-sheet-1" id = "Shoplist">
+         
+        <div class="u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+             {{#each allProducts}}
+            <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white">
+              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+                  
+                      <a href="/users/{{../userId.id}}/shop/{{this.shopId}}" class="u-btn u-button-style u-palette-3-base u-btn-1 shopNameForProductList">{{this.shopName}}</a>
+   
+       
+                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
+                <div class="content">
+                    
+          <p>Productname: {{this.productname}}</p>
+          <p>price: {{this.price}}</p>
+          <p>quantityremaining: {{this.quantityremaining}}</p>
+          <p>dateofmanufacture: {{this.dateofmanufacture}}</p>
+          <p>dateofexpiry: {{this.dateofexpiry}}</p>
+        <p><a href="https://www.google.com/maps/place/{{this.address}} {{this.pincode}}" target="_blank">{{this.address}} {{this.pincode}} </a> </p>
+        </div>
+              </div>
+            </div>
+  {{/each}}
+            </div>
+          </div>
+        </div>
+   
+{{/if}}
+      </div>
+       
+    </section>
+
+       <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>
+  </div>

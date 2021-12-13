@@ -1,0 +1,69 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+           
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box"></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">      
+                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>        
+                        <li class="nav-item"><a class="nav-link" href="/shop/login">Shopkeeper</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/users/login">Customer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop/allProduct">Product</a></li>
+                    </ul>
+              
+            </div>
+        </nav>
+
+
+<article class = "Log-in">
+  <div class="container mt-5">
+    <header>
+        <h1 class = "Login-heading" style="font-family:Georgia; color: Brown; font-size: 60px;">
+           ShopKeeper Login
+        </h1>
+    </header>
+     
+    <div class="row">
+      <div class="col-sm-8">
+        <div class = "card">
+        <div class="card-body">
+          <form action = "/shop/login" method ="POST" id = "login-form">
+   
+    <div class="form-group">  
+    <label class = "user-text" for = "username" style="font-family:Georgia; color: Brown; font-size: 20px;">
+        User Name :
+    </label>
+    <input class="input100" name = "username" id = "username" type = "text" placeholder="username" required>
+   
+    </div>
+    <div class="form-group">
+    <label class = "password-text" for = "password" style="font-family:Georgia; color: Brown; font-size: 20px;">
+        Password : 
+    </label>
+    <input class="input100"  name = "password" id = "password" type = "password" placeholder="password" required>
+    
+    </div>
+    {{!-- <input class = "login-button"  class="btn btn-dark" type = "submit" value = "Login"> --}}
+    <button type = "submit"  class="btn btn-dark" style="font-family:Georgia; color: white; font-size: 20px;">Login</button>
+    <div hidden><p id = "error-cred">You have entered wrong credentials</p></div>
+    </form>
+    {{#if error}}
+    <p class = "login-error" id = "error" style="font-family:Georgia; color: Brown; font-size: 20px;">{{error}}</p>
+    {{/if}}
+    <a style="color: Brown; font-size: 20px;">New User?</a>
+   <a href="/shop/signup" style="font-family:Georgia; color: Brown; font-size: 20px;">Click here to signup</a>
+    <p id ="user-error" hidden>Either the username or password is incorrect</p>
+    <p id = "pass-error" hidden>Either the username or password is incorrect</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </article>
+  <section>
+
+  </section>
+    <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>

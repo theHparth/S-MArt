@@ -1,0 +1,206 @@
+   <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box"></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">      
+                      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>        
+                        <li class="nav-item"><a class="nav-link" href="/shop/login">Shopkeeper</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/users/login">Customer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop/allProduct">Product</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</header>
+<article class = "Sign-up">
+  <div class="container mt-5">
+   
+        <h1 class = "Signup-heading" style="font-family:Georgia; color: Brown; font-size: 60px;">
+            Sign-up
+        </h1>
+    
+    <div class="row">
+    <div class="col-sm-8">
+    <div class="card">
+    <div class="card-body"> 
+      <form action = "/shop/signup" method ="POST" id = "signup-form">
+    <div class="form-group">
+    <label class = "user-text" for = "shopName" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Shop Name:
+        </label>
+        <input name = "ShopName"  class="form-control" id = "shopName" type = "text">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "user-text" for = "username" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            User Name :
+        </label>
+        <input name = "username"  class="form-control" id = "username" type = "text">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "user-text" for = "ownerFirstname" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            First Name:
+        </label>
+        <input name = "ownerFirstname"  class="form-control" id = "ownerFirstname" type = "text" >
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "ownerLastname" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Last Name :
+        </label>
+        <input name = "ownerLastname"  class="form-control" id = "ownerLastname" type = "text">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "Address" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Address :
+        </label>
+        <input name = "Address"  class="form-control" id = "Address" type = "text">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "email" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Email :
+        </label>
+        <input name = "email"  class="form-control" id = "email" type = "email">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "pincode" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Pincode :
+        </label>
+        <input name = "pincode"  class="form-control" id = "pincode" type = "number">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "phoneNumber" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Phone number :
+        </label>
+        <input name = "phoneNumber" class="form-control" id = "phoneNumber" type = "number">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "spassword" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Password : 
+        </label>
+        <input name = "password"  class="form-control" id = "spassword" type = "password" placeholder="Password">
+        <br>
+        </div>
+        {{!-- <input class = "signup-button" type = "submit" value = "Sign up"> --}}
+        <button type="submit" class="btn btn-dark" style="font-family:Georgia; color: white; font-size: 20px;">Sign up</button>
+    </form>
+    {{#if error}}
+    <p class = "error">{{error}}</p>
+    {{/if}}
+
+<a href="/shop/login" aria-label="More on Using Meaningful Link Text" style="font-family:Georgia; color: Brown; font-size: 15px;">Existing user? Click here to login</a>
+
+    
+
+
+<p id = "success-signup" hidden>Account created successfully</p>
+<p id = "suser-error" hidden>Either the username or password is incorrect</p>
+<p id = "Shopname" hidden>Please provide your shop name</p>
+<p id = "s_username" hidden>Please provide your user name</p>
+<p id = "s_user_error" hidden>The username must be alpha numeric characters</p>
+<p id = "s_ownerFirstname" hidden>Please provide your first name</p>
+<p id = "s_first_error" hidden>The first name should contain only alphabets</p>
+<p id = "s_last_error" hidden>The last name should contain only alphabets</p>
+<p id = "s_ownerLastname" hidden>Please provide your last name</p>
+<p id = "s_Address" hidden>Please provide your Address</p>
+<p id = "s_email" hidden>Please provide your email</p>
+<p id = "s_email_error" hidden>Please provide a valid email id</p>
+<p id = "s_pincode" hidden>Please provide your pincode</p>
+<p id = "s_pin" hidden>Please provide pincode in correct format</p>
+<p id = "s_phoneNumber" hidden>Please provide your phone number</p>
+<p id = "s_phone_error" hidden>Please provide your phone number in the correct format</p>
+<p id = "s_password" hidden>Please provide atleast six digit password</p>
+<p id = "s_space" hidden>The password contains atleast one space</p>
+
+    </div>
+    </div>
+    </div>
+    </div>
+  </div>
+  </article> 
+  <section>
+
+  </section>
+    <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>
+
+{{!-- <div class="container mt-5">
+  <h1>Login</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/signup" method="POST" id = "signup-form">
+            <div class="form-group">
+              <label for="ShopName">ShopName</label>
+    <input type="ShopName" class="form-control" placeholder="Enter ShopName" name="ShopName" id="ShopName" required>
+            </div>
+            <div class="form-group">
+              <label for="username">username</label>
+   <input type="username" class="form-control" placeholder="Enter username" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+              <label for="ownerFirstname">ownerFirstname</label>
+   <input type="ownerFirstname" class="form-control" placeholder="Enter firstname" name="ownerFirstname" id="ownerFirstname" required >
+             </div>
+            <div class="form-group">
+              <label for="ownerLastname">ownerLastname</label>
+   <input type="ownerLastname" class="form-control" placeholder="Enter Lastname" name="ownerLastname" id="ownerLastname" required>
+            </div>
+            <div class="form-group">
+              <label for="Address">Address</label>
+  <input type="Address" class="form-control" placeholder="Enter Address" name="Address" id="Address" required>
+            </div>
+             <div class="form-group">
+              <label for="email">email</label>
+  <input type="email" class="form-control" placeholder="Enter email" name="email" id="email" required>
+         </div>
+          <div class="form-group">
+              <label for="pincode">pincode</label>
+  <input type="pincode" class="form-control" placeholder="Enter pincode" name="pincode" id="pincode" required>
+         </div>
+         <div class="form-group">
+              <label for="phoneNumber">phoneNumber</label>
+  <input type="phoneNumber" class="form-control" placeholder="Enter phoneNumber" name="phoneNumber" id="phoneNumber" required>
+         </div>
+         <div class="form-group">
+              <label for="password">password</label>
+  <input type="password" class="form-control" placeholder="Enter password" name="password" id="spassword" required>
+         </div>
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+ <a href="/login">have an account? Click here to  Signin</a>
+ <p id = "success-signup" hidden>Account created successfully</p>
+<p id = "Shopname" hidden>Please provide your shop name</p>
+<p id = "s_username" hidden>Please provide your user name</p>
+<p id = "s_ownerFirstname" hidden>Please provide your first name</p>
+<p id = "s_ownerLastname" hidden>Please provide your last name</p>
+<p id = "s_Address" hidden>Please provide your Address</p>
+<p id = "s_email" hidden>Please provide your email</p>
+<p id = "s_pincode" hidden>Please provide your pincode</p>
+<p id = "s_phoneNumber" hidden>Please provide your phone number</p>
+<p id = "s_password" hidden>Please provide your password</p>
+ <div id="errorDiv"  hidden><p>{{error}}</p>
+        </div>
+      </div>
+    </div>
+
+ 
+
+  </div>
+
+</div> --}}

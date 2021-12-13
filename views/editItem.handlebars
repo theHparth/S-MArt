@@ -1,0 +1,123 @@
+
+
+
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box"></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">      
+                      <li class="nav-item"><a class="nav-link" href="/shopId/{{shopId}}">Home</a></li>        
+                        <li class="nav-item"><a class="nav-link" href="/shop/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+</nav>
+</header>
+<article class = "Sign-up">
+    <div class="container mt-5">
+  
+        <h1 class = "Signup-heading" style="font-family:Georgia; color: Brown; font-size: 40px;">
+            Edit Item
+        </h1>
+  
+    <div class="row">
+    <div class="col-sm-8">
+    <div class="card">
+    <div class="card-body">
+
+ <form method="post" id="updateitemform" action="/shopId/{{itemDetail._id}}?_method=PUT">
+
+        <input type="hidden" name="_method" value="PUT">
+
+
+    <div class="form-group"></div>
+    
+        <br>
+      
+
+        <div class="form-group">
+        <label class = "user-text" for = "prodn" style="font-family:Georgia; color: Brown; font-size: 25px;">
+            Product Name : 
+        </label>
+      <label for="prodn"> <input name="productname" id = "prodn" type = "text" value = "{{itemDetail.productname}}">
+        </label>
+     </div>
+
+    <div class="form-group">
+        <label class = "user-text" for = "prodd" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Product Details : 
+        </label>
+      <label for="prodd">  <input name="productdetails" id = "prodd"  type = "text" value = "{{itemDetail.productdetails}}">
+      </label>  <br>
+     </div>
+
+   <div class="form-group">
+        <label class = "user-text" for = "prodh" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Product Highlights : 
+        </label>
+     <label for="prodh">  <input name="producthighlights"  id="prodh" type = "text" value = "{{itemDetail.producthighlights}}">
+       </label>  <br>
+     </div>
+
+ <div class="form-group">
+        <label class = "user-text" for = "prodp" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Price : 
+        </label>
+      <label for="prodp">  <input name="price" id = "prodp"  type="text" value = "{{itemDetail.price}}">
+      </label>  <br>
+     </div>
+  
+     <div class="form-group">
+        <label class = "user-text" for = "prodq" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Quantity Remaining : 
+        </label>
+     <label for="prodq">  <input name = "quantityremaining" id = "prodq" type = "number" value = "{{itemDetail.quantityremaining}}">
+       </label>  <br>
+     </div>
+
+     <div class="form-group">
+        <label class = "user-text" for = "prodm" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Date of Manufacture : 
+        </label>
+    <label for="prodm">  <input name = "dateofmanufacture" id = "prodm" type = "date" value = "{{itemDetail.dateofmanufacture}}">
+    </label>      <br>
+     </div>
+
+     <div class="form-group">
+        <label class = "user-text" for = "prode" style="font-family:Georgia; color: Brown; font-size: 20px;">
+            Date of Expiry : 
+        </label>
+      <label for="prode">  <input name = "dateofexpiry" id = "prode" type = "date" value = "{{itemDetail.dateofexpiry}}">
+      </label>  <br>
+     </div>
+
+     <label for="Edit" style="font-family:Georgia; color: Brown; font-size: 25px;">
+<input type="submit" name="Edit" value='Edit' id="Edit"/></label>
+                <div id="errorDiv"><p>{{error}}</p>
+
+            {{#if message}}
+            <p id="message">{{message}}</p>
+            {{/if}}
+        </div>
+</form>
+ </div>
+</div>
+</div>
+</div>
+</div>
+
+</article>
+<section>
+
+</section>
+<section>
+
+</section>
+  <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>

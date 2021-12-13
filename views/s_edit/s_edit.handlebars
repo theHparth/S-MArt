@@ -1,0 +1,118 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+           
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box" ALIGN=CENTER ></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">      
+                      <li class="nav-item"><a class="nav-link" href="/shopId/{{userId._id}}">Home</a></li>        
+                        <li class="nav-item"><a class="nav-link" href="/shop/logout">Logout</a></li>
+                    </ul>
+             
+            </div>
+</nav>
+
+<article class = "Sign-up">
+    <div class="container mt-5">
+    <header>
+        <h1 class = "Signup-heading">
+            Edit Profile
+        </h1>
+    </header>
+    <div class="row">
+    <div class="col-sm-8">
+    <div class="card">
+    <div class="card-body">
+    <form method ="POST" id = "edit-form" action = "/shop/edit/shop/{{userId._id}}?_method=PUT">
+
+        <input type="hidden" name="_method" value="PUT">
+    <div class="form-group"></div>
+    <label class = "user-text" for = "shopName">
+            Shop Name:
+        </label>
+        {{!-- <input name = "ShopName" id = "shopName" type = "text" value="{{userId.ShopName}}"> --}}
+        <label class = "ShopName" id = "shopName">{{userId.ShopName}}</label>
+
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "user-text" for = "username">
+            User Name : 
+        </label>
+        <input name = "username" id = "ed_username" type = "text" value = "{{userId.username}}">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "user-text" for = "ownerFirstname">
+            First Name:
+        </label>
+        <input name = "ownerFirstname" id = "ed_ownerFirstname" type = "text" value = "{{userId.ownerFirstname}}">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "ownerLastname">
+            Last Name :
+        </label>
+        <input name = "ownerLastname" id = "ed_ownerLastname" type = "text" value = "{{userId.ownerLastname}}">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "Address">
+            Address :
+        </label>
+        <input name = "Address" id = "ed_Address" type = "text" value = "{{userId.Address}}">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "email">
+            Email :
+        </label>
+        <input name = "email" id = "ed_email" type = "email" value = "{{userId.email}}">
+        <br>
+        </div>
+        <div class="form-group">
+        <label class = "password-text" for = "pincode">
+            Pincode :
+        </label>
+        <input name = "pincode" id = "ed_pincode" type = "number" pattern="[0-9]{5}" value = "{{userId.pincode}}">
+        <br>
+        <div class="form-group">
+        <label class = "password-text" for = "phoneNumber">
+            Phone number :
+        </label>
+        <input name = "phoneNumber" id = "ed_phoneNumber" pattern="[0-9]{12}" type = "number" value = "{{userId.phoneNumber}}">
+        <br>
+        <br>
+        </div>
+        
+        <button type="submit" class="btn btn-dark">Update</button>
+    </form>
+    {{#if error}}
+    <p class = "error">{{error}}</p>
+    {{/if}}
+<p id = "success-edit" hidden>Account upadted successfully</p>
+<p id = "suser-error" hidden>Either the username or password is incorrect</p>
+<p id = "e_username" hidden>Please provide your user name</p>
+<p id = "e_user_error" hidden>The username must be alpha numeric characters</p>
+<p id = "e_ownerFirstname" hidden>Please provide your first name</p>
+<p id = "e_first_error" hidden>The first name should contain only alphabets</p>
+<p id = "e_last_error" hidden>The last name should contain only alphabets</p>
+<p id = "e_ownerLastname" hidden>Please provide your last name</p>
+<p id = "e_Address" hidden>Please provide your Address</p>
+<p id = "e_email" hidden>Please provide your email</p>
+<p id = "e_email_error" hidden>Please provide a valid email id</p>
+<p id = "e_pincode" hidden>Please provide your pincode</p>
+<p id = "e_phoneNumber" hidden>Please provide your phone number</p>
+<p id = "e_phone_error" hidden>Please provide your phone number in the correct format</p>
+<p id = "e_password" hidden>Please enter six digit password</p>
+<p id = "e_space" hidden>The password contains atleast one space</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>

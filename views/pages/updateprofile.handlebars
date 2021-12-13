@@ -1,0 +1,62 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box"></a>
+               
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">   
+                        <li class="nav-item"><a class="nav-link" href="/users/profiledetail">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/users/logout">Logout</a></li>
+                    </ul>
+           
+            </div>
+        </nav>
+<section>
+<form action="/users/updateprofile/{{user.id}}" id="update_user_profile" method="post">
+
+
+  <article class = "User Profile update">
+   <div class="container mt-5">
+          <h1 class = "Signup-heading" style="font-family:Georgia; color: brown; font-size: 60px;">
+            User Profile Update
+        </h1>
+    
+     <div class="row">
+    <div class="col-sm-8">
+    <div class="card">
+    <div class="card-body"> 
+    
+  
+        <label for="userfirstname" style="font-family:Georgia; color: brown; font-size: 20px;"><b>First name</b></label>
+      <label for="userfirstname"><input type="text" placeholder="Enter firstname" name="firstname" id="userfirstname"  value="{{user.firstName}}"></label>
+        <br>
+        <label for="userlastname" style="font-family:Georgia; color: brown; font-size: 20px;"><b>Last name</b></label>
+   <label for="userlastname"><input type="text" placeholder="Enter lastname" name="lastname" id="userlastname" value="{{user.lastname}}"></label>
+        <br>
+       <label for="useraddress" style="font-family:Georgia; color: brown; font-size:20px;"><b>Address</b></label>
+ <label for="useraddress"><input type="text" placeholder="Enter address" name="address" id="useraddress" value="{{user.address}}"></label>
+      <br>
+       <label for="usercity" style="font-family:Georgia; color: brown; font-size:20px;"><b>City</b></label>
+ <label for="usercity"><input type="text" placeholder="Enter city" name="city" id="usercity" value="{{user.city}}" ></label>
+      <br>
+     <label for="userzipcode" style="font-family:Georgia; color: brown; font-size:20px;"><b>Zipcode</b></label>
+<label for="userzipcode"><input type="text" placeholder="Enter zipcode" name="zipcode" id="userzipcode" pattern="[0-9]{5}" value="{{user.zipcode}}" ></label>
+      <div id="errorDiv" style="font-family:Georgia; color: brown; font-size:20px;"> <p>{{message}}</p>
+      </div>
+     <div>
+    <button type="submit" name="editbtn" style="font-family:Georgia; color: brown; font-size:20px;">Update</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </article>
+   </form>
+  
+
+</section>
+       <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>

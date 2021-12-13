@@ -1,0 +1,283 @@
+
+    
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            {{!-- <div class="container px-4"> --}}
+                <!-- <a class="navbar-brand" href="#page-top">S-Mart</a> -->
+                <a href="#page-top"><img class="logo-img" src="/public/Aishwarya/Shoppage/images/S-Mart-logos.jpeg" width="90" height="90" ALT="align box"></a>
+               
+                <button class="navbar-toggler" type="button" bs-toggle="collapse" bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#AddProducts">Add Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ViewProducts">View Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Messagefromcustomer">Message from customers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ViewRatings">View Ratings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop/edit/{{shopId}}">Edit your Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/shop/logout">Logout</a></li>
+                    </ul>
+                </div>
+            {{!-- </div> --}}
+        </nav>
+
+
+<form action = "/delete" method = "POST" id = "private-form">
+
+{{!-- <input name = "_method" hidden value = "DELETE">
+ <input id = "remove-button" class = "submit-button" type = "submit" value = "Remove Account" hidden>
+ <button class = "submit-button" id ="remove-button" type = "submit" value = "Remove Account" hidden></a></button>
+ <p id = "remove-success" hidden>Account removed successfully</p> --}}
+</form>
+
+
+
+  <section id="AddProducts">
+      <h1 style="font-family:Georgia; color: Brown; font-size: 50px;">{{title}}</h1>
+                 <div class="container px-4">
+                  <div class="container mt-5">
+
+                  <div class="row">
+                  <div class="col-sm-9"> 
+                    <div class="col-lg-8">
+                        <h1 style="font-family:Georgia; color: Brown; font-size: 25px;">Add Products</h1>
+
+
+   
+
+
+
+
+    <div class="form-group">
+<form method="post" id="additemformb1" action="/shopId/{{shopId}}">
+<div class="form-group">
+<label for="productname" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Product Name</b></label>
+    <input size="18" type="text" id="productname" name="productname" placeholder="Product Name" >
+</div> 
+
+   
+
+    <div class="form-group">
+<label for="productdetails" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Product Details</b></label>
+    <input id="productdetails" type="text" name="productdetails" placeholder="ProductDetails">
+</div>
+
+
+     <div class="form-group">
+<label for="producthighlights" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Product highlights</b></label>
+    <input id="producthighlights" type="text" name="producthighlights" placeholder="Product Highlights">
+</div>
+
+     <div class="form-group">
+<label for="pricetotalAmt" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Product total Amount</b></label>
+    <input size="10" type="text" id="pricetotalAmt" name="price" placeholder="Price ( $ )"  value="">
+</div>
+
+     <div class="form-group">
+<label for="quantityremaining" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Quantity Remaining</b></label>
+    <input id="quantityremaining" type="text" name="quantityremaining" placeholder="quantityremaining"  value="" >
+ 
+
+    </div>
+ <div class="form-group">  
+<label for="dateofmanufacture" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Date of manufacturing</b></label>
+    <input id="dateofmanufacture" type="date" name="dateofmanufacture"  value="" >
+ 
+ <br>
+ 
+     </div> 
+ <div class="form-group">
+<label for="dateofexpiry" style="font-family:Georgia; color: Brown; font-size: 15px;"><b>Date of Expiry</b></label>
+    <input id="dateofexpiry" type="date" name="dateofexpiry"   value="" >
+ 
+ <br>
+</div> 
+
+<div class="form-group">
+            
+                <div class="" id="submitNew" >
+                    <button type="submit" id="submitaddNew" style="font-family:Georgia; color: Brown; font-size: 15px;">Add Product</button>
+                </div>
+           
+</div>
+</form>
+               
+       
+  <div id="errorDiv"  ><p>{{messagetoCreateProduct}}</p></div>
+  </div>
+  </div>
+  </div>
+   </div>
+</div>
+</div>
+  </section>
+
+  {{!-- view prods --}}
+<section id="ViewProducts">
+                 <div class="container px-4">
+                
+                    <div class="col-lg-9">
+                        <h2 style="font-family:Georgia; color: Brown; font-size: 25px;">View Products</h2>
+                        <p class="lead">Below are the list of products available</p>
+    {{#if allItem}}
+    <table >
+
+        <tr>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Product Name </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Product Details </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Product Highlights </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Price </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Quantity Remaining </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Date of Manufacture </th>
+            <th style="font-family:Georgia; color: black; font-size: 15px;"> Date of Expiry </th>
+            <th></th>
+        </tr>
+        
+        {{#each allItem}}
+        <tr>
+            <td><label type="text" name="productname" id="productname" value="{{this.productname}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.productname}}</label>
+            </td>
+            <td><label type="text" name="productdetails" id="productdetails" value="{{this.productdetails}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.productdetails}}</label>
+            </td>
+            <td><label type="text" name="producthighlights" id="producthighlights"
+                    value="{{this.producthighlights}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.producthighlights}}</label></td>
+            <td><label type="text" name="price" id="pricep" value="{{this.price}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.price}}</label></td>
+            <td><label type="text" name="quantityremaining" id="quantityremaining"
+                    value="{{this.quantityremaining}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.quantityremaining}}</label></td>
+            <td><label type="text" name="dateofmanufacture" id="dateofmanufacture"
+                    value="{{this.dateofmanufacture}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.dateofmanufacture}}</label></td>
+            <td><label type="text" name="dateofexpiry" id="dateofexpiry" value="{{this.dateofexpiry}}" style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.dateofexpiry}}</label>
+            </td> 
+             <td>
+                <form method="get" action="/shopId/editItem/{{this._id}}">
+                    <input type="submit" name="Edit" value='Edit' />
+                </form>
+            </td>
+            <td>
+                <form method="post" action="/shopId/delete/{{this._id}}?_method=DELETE">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" name="delete" value='Delete' />
+                </form>
+            </td>
+         
+        </tr>
+        {{/each}}
+
+{{else}}
+<h4>No Products available</h4>
+
+        {{/if}}
+    </table>
+   
+    </div>
+    </div>
+</section>
+
+
+
+<section id="Messagefromcustomer">
+                     <div class="container px-4"></div>
+                     <h3 style="font-family:Georgia; color: Brown; font-size: 30px;">Message from customers</h3>
+                        <p class="lead" style="font-family:Georgia; color: Brown; font-size: 25px;">Below are messages from customer</p>
+ 
+    {{#if messageProduct}}
+    <p id="message" style="font-family:Georgia; color: Brown; font-size: 15px;">{{messageProduct}}</p>
+    {{/if}}
+
+
+
+{{#if messageForMessage}}
+
+<p id="message" style="font-family:Georgia; color: Brown; font-size: 15px;">{{messageForMessage}}</p>
+
+{{/if}}
+
+{{#if msgForShop}}
+
+<table id="message" >
+
+    <tr>
+        <th style="font-family:Georgia; color: black; font-size: 20px;">Date</th>
+        <th style="font-family:Georgia; color: black; font-size: 20px;">User Name</th>
+        <th style="font-family:Georgia; color: black; font-size: 20px;">Message</th>
+  
+    </tr>
+    {{#each msgForShop}}
+    <tr>
+        {{!-- <td>{{this.idUser}}</td> --}}
+
+        <td style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.date}}</td> 
+        {{!-- <td>{{this.firstname}}</td> --}}
+        <td style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.userName}}</td>
+        <td style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.message}}</td>
+        <td>
+            <form method="post" action="/shopId/delete/{{this._id}}?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" name="delete" value='Delete' />
+            </form>
+        </td>
+        <td>
+
+            <form method="post" id="shopToUserMessaage" action="/shopId/{{this.idUser}}/{{this.shopId}}">
+                <label for="shopmessage" style="font-family:Georgia; color: Brown; font-size: 15px;">Reply Message</label>
+         <label for="shopmessage"><input type="text" name="replayMessage" id="shopmessage" /></label>
+         <button type="submit" id="submitaddNeww" style="font-family:Georgia; color: Brown; font-size: 15px;">Send Reply</button>
+            </form>
+            <div id="errorDiv1"  ></div>
+            <p class = "error"> </p>
+        </td>
+    </tr>
+
+    {{/each}}
+
+     </table>
+{{/if}}
+
+</section>
+<section id="ViewRatings">
+                 <div class="container px-4">
+                
+                    
+                        <h4 style="font-family:Georgia; color: Brown; font-size: 50px;">View Ratings</h4>
+                        
+                    
+                        {{#if averageRating}}
+                        <h5 style="font-family:Georgia; color: Brown; font-size: 40px;"  >Average rating of your shop: {{averageRating}}
+                        </h5>
+                        {{/if}}
+                        {{#if noRating}}
+                        <h6 style="background-color:#FDDA0D;" for="noRating">{{noRating}}
+                        </h6>
+                        {{/if}}
+   
+                       {{#if commentForShop}}
+                       <h2 style="font-family:Georgia; color: Brown; font-size: 20px;"> Comment from Customer</h2>
+                       <table id="comment" >
+                           <tr>
+                               <th style="font-family:Georgia; color: black; font-size: 15px;">User Name</th>
+                               <th style="font-family:Georgia; color: black; font-size: 15px;">Comment</th>
+                               <th style="font-family:Georgia; color: black; font-size: 15px;">Date</th>
+                           </tr>
+                           {{#each commentForShop}}
+                           <tr>
+                               <td style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.userName}}</td>
+
+                               <td style="font-family:Georgia; color: Brown; font-size: 15px;">{{this.comment}}</td>
+                               <td style="font-family:Georgia; color: Brown; font-size: 15px;">
+                                   {{this.date}}
+                               </td>
+                           </tr>
+                           {{/each}}
+</table>
+{{/if}}
+
+{{#if noComment}}
+<p id="message" style="font-family:Georgia; color: Brown; font-size: 15px;">{{noComment}}</p>
+{{/if}}
+
+                     </div>   
+                        
+</section>
+<!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"><p class="m-0 text-center text-white">​Throwing away food is like stealing from the table of those who are poor and hungry. - Pope Francis</p></div>
+        </footer>
